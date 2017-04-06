@@ -58,7 +58,7 @@ $(document).ready(function() {
 
   function getGrowlForm(){
     $.ajax({
-      url: '/components/form.json',
+      url: 'components/form.json',
       method: 'GET'
     }).done(function(response){
       $('body').prepend(response.html);
@@ -69,7 +69,7 @@ $(document).ready(function() {
 
   function getGrowlHtml(){
     $.ajax({
-      url: '/components/growls.json',
+      url: 'components/growls.json',
       method: 'GET'
     }).done(function(response){
       $('body').prepend(response.html);

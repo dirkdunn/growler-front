@@ -83,7 +83,7 @@ $(document).ready(function() {
   var logout = function() {
     localStorage.removeItem('id_token');
     localStorage.removeItem('profile');
-    window.location.href = "/";
+    window.location.href = "https://dirkdunn.github.io/growler-front/";
   };
 
   function setHandlers(){
@@ -115,20 +115,7 @@ $(document).ready(function() {
       provider: profile.identities[0].provider
     };
 
-    // $.ajax({
-    //   url: domain + '/growl',
-    //   method: 'POST',
-    //   data: data
-    // }).done(function(response){
-    //   // put the growl into the DOM
-    //   console.log('Growl was added to the DB! ', response);
-    //   addGrowlLocal(response)
-    // }).fail(function(error){
-    //   console.error('Error: ', error);
-    // });
-
     socket.emit('add growl', data);
-
 
   };
 
@@ -142,17 +129,6 @@ $(document).ready(function() {
       '</li>'
     ].join(''));
   };
-
-  // function refreshGrowls(){
-  //   $.ajax({
-  //     url: domain + '/growl',
-  //     method: 'GET'
-  //   }).done(function(response){
-  //
-  //   }).fail(function(error){
-  //     console.error('Error: ', error);
-  //   });
-  // };
 
   socket.on('send growls',function(growls){
     // put the growl into the DOM
